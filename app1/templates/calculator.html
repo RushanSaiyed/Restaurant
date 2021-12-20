@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Stick+No+Bills:wght@300&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+        body{
+            height: 50vh;
+        }
+        .calculator {
+            padding: 50px;
+            border: 1px solid gray;
+            box-shadow: 1px 2px 3px gray;
+            border-radius: 20px;
+            margin: auto;
+        }
+        input{
+            padding: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card calculator" style="width: 40rem;">
+            <div class="card-body text-center">
+                <form method="GET">
+                    <div class="form-group">
+                        <input type="number" name="first" value="{{val1}}" placeholder="Enter First Value">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" name="second" value="{{val2}}" placeholder="Enter Second Value">
+                    </div>
+                    <hr>
+                        <select name="choice">
+                            <option value="add">Addition</option>
+                            <option value="sub">Substraction</option>
+                            <option value="mul">Multiplication</option>
+                            <option value="div">Division</option>
+                        </select>
+                        <input type="submit" value="SUBMIT">
+                    <hr>
+                </form>
+                <h1>Total is : {{ ans }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

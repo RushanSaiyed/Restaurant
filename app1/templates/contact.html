@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!-- Start Contact Us -->
+    <div class="container-fluid contact-back" style="margin-top: 100px;">
+        <div class="container contact-us ">
+            <h2 class="text-center contact-heading"><span>C</span>ontact Us</h2>
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, aliquam.</p>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-lg-6 mt-5">
+                    <div class="card p-5 form-card ">
+                        <form>
+                            <div class="form-group">
+                                <h5 class="mb-3">Send Message</h5>
+
+                                <input type="type" class="form-control contact-name" placeholder="Name">
+
+                                <input type="email" class="form-control mail" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder=" Email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                    anyone else.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <!-- <label for="exampleFormControlTextarea1">Message</label> -->
+                                <textarea class="form-control" placeholder="Message" id="exampleFormControlTextarea1"
+                                    rows="2"></textarea>
+                            </div>
+
+
+                            <button type="submit" class="btn contact-btn">Send</button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="col-md-4 col-sm-12 col-lg-4 mt-5 pt-5">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.8577000368477!2d72.57688521496796!3d23.02899648494981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e845aa4fdae75%3A0xb19e33b9b2d1a6b8!2sOld%20City%2C%20Saiyedwada%2C%20Khanpur%2C%20Ahmedabad%2C%20Gujarat%20380001!5e0!3m2!1sen!2sin!4v1634808602986!5m2!1sen!2sin" width="400" height="250" style="border-radius: 20px; box-shadow: 1px 2px 3px gray;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>  
+<!-- End Contact Us -->
+{% endblock content %}
+
+

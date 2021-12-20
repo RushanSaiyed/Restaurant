@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+<br><br><br><br>
+<div class="container">
+    <form action="" method="GET">
+        <input type="text" name="search" class="form-control fa fa-search" placeholder="search ..">
+    </form>
+</div>
+
+
+{% for p in abc %}
+<div class="col-md-3 col-lg-3 col-sm-12 col-12  ">
+    <div class="card-deck mt-5">
+        <div class="card">
+            <img class="card-img-top" src="{{ p.images.url }}" alt="Card image cap">
+            <div class="card-body">
+                <div class="card-title text-left">
+                    <h5>{{p.name}}</h5>
+                    <h6>Only at {{p.price}} <i class="fa fa-inr"></i></h6>
+                    <p>{{p.des}}</p>
+
+                </div>
+                <div class="order-btn text-center">
+                    <a href="" class="btn">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock content %}
