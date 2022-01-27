@@ -31,12 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'report_builder',
     'app1',
    
 ]
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'Ecommerce.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,6 +104,27 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# JAZZMIN_SETTINGS = {
+#     # title of the window (Will default to current_admin_site.site_title if absent or None)
+#     "site_title": "Rushan",
+
+#     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+#     "site_header": "saiyed",
+
+#     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+#     "site_brand": "sai",
+
+#     # Logo to use for your site, must be present in static files, used for brand on top left
+#     "site_logo": "static/images/logo.png",
+
+#     # CSS classes that are applied to the logo above
+#     "site_logo_classes": "img-circle",
+
+#     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
+#     "site_icon": None,
+
+# }
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -120,5 +143,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL= '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+JAZZMIN_SETTINGS = {
+    # title of the window (Will default to current_admin_site.site_title if absent or None)
+    "site_logo": "images/loginlogo.png",
+    "site_logo_classes": "img-circle",
+    "welcome_sign": "Welcome to the SAIYED | RESTRO",
+    "custom_css": "admin/base.css",
+}
+
+# JAZZMIN_UI_TWEAKS = {
+#     "theme": "darkly",
+#     "dark_mode_theme": "darkly",
+# }

@@ -8,11 +8,10 @@
 .navbar .navbar-brand span{
     color: 	#ff0150;
 }
-.navbar .navbar-brand{
-    color: 	black;
-    font-weight: bold;
-    font-size: 25px;
-    margin-left: 40px;
+.navbar .navbar-brand img{
+    height: 70px;
+    
+    /* margin-left: 40px; */
 }
 .navbar #mymenu .custom-nav .nav-item{
    color: black;
@@ -25,15 +24,17 @@
 .navbar #mymenu .custom-nav .nav-item:hover{
     color: #ff0150;
     transition: 0.5s;
-    font-size: 18px !important;
+    /* font-size: 18px !important; */
     
 }
+
 .back-img{
     height: 100vh;
     background-size: cover;
+    
 }
 .back-img .heading{
-    padding-top: 200px;
+    padding-top: 300px !important;
     letter-spacing: 5px;
     font-weight: 900;
     font-size: 60px;
@@ -61,25 +62,29 @@
 }
 
 /* .................... OUR MENU......................  */
-
+.heading .card{
+    box-shadow: 1px 1px 2px gray;
+    height: 430px !important;
+}
 .card img{
     height: 180px;
 }
 .ourmenu{
-    margin-top: 100px !important;
+    margin-top: 150px !important;
 }
-.ourmenu .price-btn{
-    background-color: #ff0150;
-    color: white;
+.ourmenu .fa-rupee-sign{
+    color: #ffcc33;
 }
-.ourmenu .order-btn{
+.ourmenu .heading .order-btn{
     background-color: #ff0150;
     border-radius: 10px;
+    /* margin-bottom: 20px; */
 }
 .ourmenu .order-btn a{
     text-decoration: none;
     color: white;
 }
+
 .ourmenu .menu-heading{
     font-size: 35px;
 }
@@ -99,10 +104,77 @@
     border-bottom-right-radius: 8px;
     margin-left: -5px;
 }
-.dropdown .dropdown-menu{
+.scroll .drop-menu{
     height: 110px;
     overflow:auto;
 }
+.ourmenu .choice_food .btn{
+    /* background-color: #ff0150; */
+    text-decoration: none;
+    color: black;
+    border: 2px solid #ff0150;
+    border-radius: 20px;
+    padding: 2px 20px;
+    transition: 0.5s;
+    box-shadow: 1px 1px 2px gray;
+    margin-right: 5px;
+
+}
+.ourmenu .choice_food .btn:hover{
+    background-color: #ff0150;
+    color: white;
+    /* border: 1px solid white; */
+    transition: 0.5s;
+
+}
+.ourmenu .heading .des-scroll{
+    max-height: 70px !important;
+    overflow: auto;
+}
+
+/* Catwise Product */
+.catwise{
+    margin-top: 150px !important;
+}
+.catwise .fa-rupee-sign{
+    color: #ffcc33;
+}
+.catwise .heading .order-btn{
+    background-color: #ff0150;
+    border-radius: 10px;
+}
+.catwise .order-btn a{
+    text-decoration: none;
+    color: white;
+}
+.catwise .heading .headofcat b{
+    color: #ff0150;
+}
+.catwise .heading .des-scroll{
+    max-height: 70px !important;
+    overflow: auto;
+}
+.catwise .heading .choice_food .btn{
+    /* background-color: #ff0150; */
+    text-decoration: none;
+    color: black;
+    border: 2px solid #ff0150;
+    border-radius: 20px;
+    padding: 2px 20px;
+    transition: 0.5s;
+    box-shadow: 1px 1px 2px gray;
+    margin-right: 5px;
+
+}
+.catwise .heading .choice_food .btn:hover{
+    background-color: #ff0150;
+    color: white;
+    /* border: 1px solid white; */
+    transition: 0.5s;
+
+}
+/* Catwise Product */
+
 /* .................... Contact Us......................  */
 .contact-back{
     background-image: url("../images/bg3.jpg");
@@ -124,18 +196,57 @@
 }
 .contact-us .form-card{
     box-shadow: 2px 3px 4px grey;
-    border-radius: px;
+    border-radius: 20px;
 }
 
-
-.footer .footer-logo span{
-    color: 	#ff0150;
+.footer .info .icon{
+    display: inline;
+    margin-right: 160px;
+    /* padding: 9px; */
+    /* border: 1px solid white; */
+    padding: 13px 15px;
+    background-color: #ff0150;
+    border-radius: 10px;
 }
-.footer .footer-logo{
-    color: 	black;
-    font-weight: bold;
-    font-size: 25px;
-    margin-left: 40px;
+.footer .info .fa-map-marker-alt{
+    font-size: 24px;
+    color: white;
+    
+}
+.footer .info .fa-phone-alt{
+    font-size: 22px;
+    color: white;
+    
+}
+.footer .info .fa-envelope{
+    font-size: 22px;
+    color: white;
+    
+}
+.footer .info .fa-clock{
+    font-size: 22px;
+    color: white;
+    
+}
+.footer .info h5{
+    margin-top: -38px;
+}
+.footer .info p{
+    margin-top: -3px;
+    margin-left: 60px;
+    color: #959595;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+}
+.footer .info .ph{
+    margin-top: -6px;
+    font-family: 'DM Sans', sans-serif;
+    margin-left: 16px;
+}
+
+.footer .footer-logo img{
+    height: 70px;
 }
 .footer-text .fa-heart{
     color: #ff0150;
@@ -145,25 +256,85 @@
     text-decoration: none;
     font-weight: bold;
 }
-.footer .follow-us .fa-facebook-official{
-    font-size: 23px;
-    color: #3b5998;
-}
-.footer .follow-us .fa-instagram{
-    font-size: 23px;
-    color: #833AB4;
-}
-.footer .follow-us .fa-twitter{
-    font-size: 23px;
-    color: 	#1DA1F2;
-}
-.footer .follow-us .fa-youtube-play{
-    font-size: 23px;
-    color: #FF0000;
-}
-.footer .follow-us a{
+
+.footer .icons-links a{
     text-decoration: none;
-    color: black;
+    color: #959595;
+    margin-left: 5px;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+
+}
+.foot-text p{
+    color: #959595;
+    font-family: 'DM Sans', sans-serif;
+}
+.footer .icons-links a:hover{
+    text-decoration: none;
+    color: #ff0150;
+
+}
+.footer .icons-links .fa-ellipsis-h{
+    color: #ff0150;
+}
+.footer form input{
+    width: 112px;
+    /* padding: 5px; */
+    border: none;
+    border-radius: 5px;
+    padding: 9px;
+    /* border-radius: 5px; */
+}
+.footer .arrow{
+    display: inline;
+    margin-left: 1px;
+    padding: 9px;
+    background-color: #ff0150;
+    border-radius: 5px;
+}
+.footer form .fa-location-arrow{
+    font-size: 23px;
+    color: white;
+}
+.footer .fa-facebook-f{
+    border: 1px solid #F8F9FA;
+    padding: 10px 13px;
+    background-color: #ff0150;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+}
+.footer .fa-twitter{
+    border: 1px solid #F8F9FA;
+    padding: 10px;
+    background-color: #ff0150;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+}
+.footer .fa-youtube{
+    border: 1px solid #F8F9FA;
+    padding: 10px;
+    background-color: #ff0150;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+}
+.footer .fa-instagram{
+    border: 1px solid #F8F9FA;
+    padding: 10px;
+    background-color: #ff0150;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+}
+.footer h5{
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+.icons-links a{
+    
 }
 
 
@@ -245,4 +416,26 @@
     .Testimonials .card-deck .card {
         box-shadow: 2px 3px 4px white;
     }
+}
+
+
+/* ................. Booking a Table............. */
+.booking {
+    margin-top: 150px;
+    background-color: #ff0150;
+    color: white;
+    padding: 5px 0px;
+    border-radius: 15px;
+}
+.seat h3{
+    font-size: 20px;
+}
+
+.table_booking .tables .booking-btn{
+    background-color: #ff0150;
+    border-radius: 10px;
+}
+.table_booking .tables .booking-btn a{
+    text-decoration: none;
+    color: white;
 }

@@ -1,0 +1,176 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forgot Password</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Stick+No+Bills:wght@300&display=swap"
+            rel="stylesheet">
+    
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                border-radius: 5px;
+            }
+    
+            body{
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                font-family: sans-serif;
+                justify-content: center;
+                background-image: url({% static '/images/bg2.jpg' %});
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+     
+    
+           .logo img{
+               height: 100px;
+           }
+    
+            .forgot_pass {
+                /* border: 1px solid black; */
+                box-shadow: 1px 2px 3px gray;
+                border-radius: 20px;
+                /* width: 25rem; */
+                margin: auto;
+                padding-bottom: 20px;
+            }
+    
+            .forgot_pass h4 {
+                font-size: 25px !important;
+                letter-spacing: 3px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                font-family: 'Stick No Bills', sans-serif;
+            }
+    
+            .forgot_pass .btns .google {
+                text-decoration: none;
+                color: white;
+            }
+    
+            .forgot_pass .btns .facebook {
+                text-decoration: none;
+                color: white;
+            }
+    
+            .google {
+                background-color: tomato;
+                color: white;
+                padding: 5px 70px;
+            }
+    
+            .facebook {
+                background-color: #4267B2;
+                color: white;
+                padding: 5px 58px;
+            }
+    
+            .fa-google,
+            .fa-facebook-square {
+                font-size: 17px;
+            }
+    
+            .forgot_pass .one {
+                border: 1px solid gray;
+                border-radius: 5px;
+                margin-top: 20px;
+            }
+    
+            input:focus {
+                outline: none;
+            }
+    
+            .forgot_pass .one input {
+                border: 1px solid lightgray;
+                
+                width: 230px;
+                border-radius: 5px;
+                height: 32px;
+                padding: 10px;
+                background-color: transparent !important;
+                border: 0px !important;
+                color: black;
+    
+            }
+    
+            .forgot_pass .fa-envelope {
+                padding: 10px;
+                font-size: 20px;
+                border-right: 1px solid gray;
+                background-color: whitesmoke;
+            }
+    
+            .forgot_pass .fa-lock {
+                padding: 10px;
+                font-size: 20px;
+                border-right: 1px solid gray;
+                background-color: whitesmoke;
+            }
+    
+            .forgot_pass .btn-continue {
+                padding: 5px 105px;
+                background-color: #ff0150;
+                color: white;
+            }
+    
+        </style>
+    
+    </head>
+<body>
+    <div class="container mt-5">
+        <div class="card forgot_pass " style="width: 20rem;">
+            <div class="logo pt-3 text-center">
+                <img src="{% static 'images/loginlogo.png' %}" alt="">
+                <hr>
+            </div>
+            <div class="card-body">
+    
+                <h4 class="text-center">Password assistance</h4>
+                <p class="text-center">Enter the email address associated with your SAIYED | RESTRO account.</p>
+    
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group one">
+                        <!-- <label for="exampleInputEmail1">Email address</label> -->
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" requiredid="usernamefield" placeholder="Email">
+                    </div>
+    
+    
+                    <div class="btn2 text-center mt-4">
+                        <button type="submit" name="continue" class="btn btn-continue">Continue</button>
+                    </div>
+    
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+
+</body>
+</html>

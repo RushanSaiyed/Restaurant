@@ -1,0 +1,152 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OTP</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Stick+No+Bills:wght@300&display=swap"
+            rel="stylesheet">
+    
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                border-radius: 5px;
+            }
+    
+            body{
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                font-family: sans-serif;
+                justify-content: center;
+                background-image: url({% static '/images/bg2.jpg' %});
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+     
+    
+           .logo img{
+               height: 100px;
+           }
+    
+            .otp {
+                /* border: 1px solid black; */
+                box-shadow: 1px 2px 3px gray;
+                border-radius: 20px;
+                /* width: 25rem; */
+                margin: auto;
+                padding-bottom: 20px;
+            }
+    
+            .otp h4 {
+                font-size: 25px !important;
+                letter-spacing: 3px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                font-family: 'Stick No Bills', sans-serif;
+            }
+    
+            .otp .one {
+                border: 1px solid gray;
+                border-radius: 5px;
+                margin-top: 20px;
+            }
+    
+            input:focus {
+                outline: none;
+            }
+    
+            .otp .one input {
+                border: 1px solid lightgray;
+                
+                width: 230px;
+                border-radius: 5px;
+                height: 32px;
+                padding: 10px;
+                background-color: transparent !important;
+                border: 0px !important;
+                color: black;
+    
+            }
+    
+            .otp .fa-key {
+                padding: 10px;
+                font-size: 20px;
+                border-right: 1px solid gray;
+                background-color: whitesmoke;
+            }
+    
+    
+            .otp .btn-continue {
+                padding: 5px 105px;
+                background-color: #ff0150;
+                color: white;
+            }
+    
+        </style>
+    
+    </head>
+<body>
+    <div class="container mt-5">
+        <div class="card otp " style="width: 20rem;">
+            <div class="logo pt-3 text-center">
+                <img src="{% static 'images/loginlogo.png' %}" alt="">
+                <hr>
+            </div>
+            <div class="card-body">
+    
+                <h4 class="text-center">Verification required</h4>
+                <p class="text-center">To continue, complete this verification step. We've sent an OTP to the email {{email}} . Please enter it below to complete verification.</p>
+                 {% if messages %}
+                            <div class="alert alert-info text-dark alert-dismissible fade show" role="alert">
+                                {% for i in messages  %}
+                                    {{i}}
+                                {% endfor %}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                {% endif %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group one">
+                        <!-- <label for="exampleInputEmail1">Email address</label> -->
+                        <i class="fas fa-key"></i>
+                        <input type="number" name="otp" value="{{otp}}" placeholder="Enter OTP">
+                    </div>
+    
+    
+                    <div class="btn2 text-center mt-4">
+                        <button type="submit" name="continue" class="btn btn-continue">Continue</button>
+                    </div>
+    
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+
+</body>
+</html>

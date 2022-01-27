@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}
+<head>
+    <title>MyCart</title>
+</head>
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+{% if all %}
+<div class="container mt-5">
+    <table class="table" style="margin-top: 150px !important;">
+        <thead>
+          <tr>
+            <th scope="col">SrNo</th>
+            <th scope="col">Product</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Added On</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for cart in all  %}
+        <tr>
+            <th scope="row">1</th>
+            <td>{{cart.name}}</td>
+            <td>{{cart.price}}</td>
+            <td>@{{cart.added_on}}</td>
+          </tr>
+        {% endfor %}
+          
+        </tbody>
+      </table>
+</div>
+
+{% else %}
+<h2 style="margin-top: 100px;">No Item in Cart</h2>
+{% endif %}
+
+{% endblock content %}
+     

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}
+
+<head>
+    <title>Menu</title>
+</head>
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+<!-- Start Menu -->
+<div class="container ourmenu  ">
+    <div class="row">
+        <div class="col-md-4 col-sm-12 mt-3 ">
+        
+            <form action="" method="GET">
+                <input type="text" placeholder="Search" name="search"
+                    style="padding: 1px 15px; border: 2px solid black; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </form>
+
+        </div>
+        <div class="col-md-4">
+            <h2 class="text-center menu-heading">Our <span>M</span>enu</h2>
+        </div>
+
+    </div>
+
+
+    <div class="row choice_food mt-5">
+        <div class="col-md-12 text-center ">
+        <a href="{% url 'menu' %}" class="btn" style="background-color: #ff0150; color: white;">All</a>
+            {% for c in rushan %}
+                <a href="/cat/{{c.name}}" class="btn">{{ c }}</a>
+			{% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="heading">
+            <div class="row">
+
+                {%  for i in pro %}
+                <div class="col-md-3 col-lg-3 col-sm-12 col-12  ">
+                    <div class="card-deck mt-5">
+                       <a href="{% url 'productview' i.id %}" style="text-decoration: none; color: black;">
+                        <div class="card">
+                            <img class="card-img-top" src="{{i.images.url}}" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="card-title text-left">
+                                    <h5>{{i.name}}</h5>
+                                    <p class="des-scroll" >{{i.des}}</p>
+                                    <h5><i class="fas fa-rupee-sign"></i> {{i.price}} </h5>
+
+                                </div>
+                                <div class="order-btn text-center">
+                                    <a href="" class="btn">Order Now</a>
+                                </div>
+                            </div>
+                        </div>
+                       
+                       </a>
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% for i in s %}
+                <div class="col-md-3 col-lg-3 col-sm-12 col-12  ">
+                    <div class="card-deck mt-5">
+                        
+                        <a href="{% url 'productview' i.id %}" style="text-decoration: none; color: black;">
+                            <div class="card">
+                                <img class="card-img-top" src="{{i.images.url }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <div class="card-title text-left">
+                                        <h5>{{i.name}}</h5>
+                                        <p class="des-scroll">{{i.des}}</p>
+                                        <h5><i class="fas fa-rupee-sign"></i> {{i.price}} </h5>
+    
+                                    </div>
+                                   <form action="{% url 'addtocart' i.id %}" method="POST" >
+                                   {% csrf_token %}
+                                   <input type="hidden">
+                                    <div class="order-btn mt-3 text-center">
+                                        <i class="fas fa-cart-plus" style="color: white;"></i>
+                                        <a href="" class="btn">Add to Cart</a>
+                                    </div>
+                                   </form>
+                                </div>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- End Menu -->
+{% endblock content %}

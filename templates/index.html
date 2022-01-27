@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+<head>
+    <title>Home</title>
+</head>
+{% endblock title %}
+
+{% block content %}
+
+{% load static %}
+    <!-- Start Banner -->
+    <header class="back-img" style="background-image:url('{% static 'images/bg.jpg' %}');">
+        <div class="text-center food-text">
+            <h1 class="text-capitalize heading text-light"><span>A</span>lways <span>C</span>hoose <span>G</span>ood
+            </h1>
+            <p class="para ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione velit eveniet nihil
+                laboriosam sequi quidem harum, inventore quis maxime nesciunt!
+            </p>
+            <a href="{% url 'menu' %}"><button type="button" class="btn ">OUR MENU</button></a>
+        </div> 
+    </header>
+
+    
+
+    <!-- End Banner -->
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+    {% block title %}
+    <head>
+        <title>Table Book</title>
+    </head>
+    {% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container table_booking" style="margin-top: 100px;">
+    <div class="tables">
+        <div class="row mt-5">
+            {% for x in xyz %}
+            <div class="col-md-3 col-lg-3 col-sm-12 col-12  ">
+                <div class="card-deck mt-5">
+                    <div class="card">
+                        <img class="card-img-top" src="{{x.images.url }}" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="card-title text-left">
+                                <h5>Capacity : {{x.capacity}}</h5>
+                                <p>{{x.status}}</p>
+
+                            </div>
+                            <div class="booking-btn text-center">
+                                <a class="btn" data-toggle="modal" data-target="#exampleModal">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-sm" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="exampleModalLabel">Choose Date & Time for Booking </h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST">
+                {% csrf_token %}
+                    <div class="modal-body m-auto">
+                            <input type="datetime-local" id="date" name="date" value=""
+                            min="2022-01-01T09:00" max="2030-12-31T09:00">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                        <button type="submit" value="submit" class="btn" name="submit" style=" background-color: #ff0150;text-decoration: none;
+                        color: white;">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

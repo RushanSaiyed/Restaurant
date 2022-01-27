@@ -1,0 +1,26 @@
+.main-footer{
+    color: white;
+}
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active{
+    background-color: #ff0150;
+    color: white;
+}
+
+.card-primary.card-outline {
+    border-top: 3px solid #ff0150;
+}
+.accent-primary a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.page-link):not(.btn) {
+    color: #ff0150;
+}
+.brand-link {
+    display: block;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    padding: 0.8125rem 0.5rem;
+    transition: width .3s ease-in-out;
+    white-space: nowrap;
+    color: white !important;
+}
+img{
+    height: 200px !important;
+}

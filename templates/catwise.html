@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+<head>
+    <title>Catwise Product</title>
+</head>
+
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container catwise">
+    <div class="heading">
+        <h2 class="text-center headofcat ">Food of Category : <b> {{cat}}  </b></h2>
+            <div class="row choice_food mt-5">
+                <div class="col-md-12 text-center ">
+                <a href="{% url 'menu' %}" class="btn" style="background-color: #ff0150; color: white;">All</a>
+                    {% for c in rushan %}
+                        <a href="/cat/{{c.name}}" class="btn">{{ c }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        <div class="row">
+        
+            {% for i in pro %} 
+            <div class="col-md-3 col-lg-3 col-sm-12 col-12">
+                <div class="card-deck mt-5">
+                   <a href="{% url 'productview' i.id %}" style="text-decoration: none; color: black;">
+                        <div class="card">
+                            <img class="card-img-top" src="{{i.images.url }}" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="card-title text-left">
+                                    <h5>{{i.name}}</h5>
+                                    <p class="des-scroll">{{i.des}}</p>
+                                    <h5><i class="fas fa-rupee-sign"></i> {{i.price}} </h5>
+
+                                </div>
+                                <div class="order-btn text-center">
+                                   <i class="fas fa-cart-plus" style="color: white;"></i>
+                                        <a href="" class="btn">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                   </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
